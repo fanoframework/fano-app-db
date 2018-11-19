@@ -30,7 +30,8 @@ uses
     (*! -------------------------------
      *   controllers factory
      *----------------------------------- *)
-    {---- put your controller factory here ---};
+    {---- put your controller factory here ---},
+    UserControllerFactory;
 
 
     procedure TBootstrapApp.buildDependencies(const container : IDependencyContainer);

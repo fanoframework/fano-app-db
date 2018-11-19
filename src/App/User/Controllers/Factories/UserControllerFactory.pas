@@ -36,12 +36,22 @@ uses
 
     function TUserControllerFactory.build(const container : IDependencyContainer) : IDependency;
     var routeMiddlewares : IMiddlewareCollectionAware;
+        config : IAppConfiguration;
+        viewParams : IViewParameters;
     begin
         routeMiddlewares := container.get('routeMiddlewares') as IMiddlewareCollectionAware;
         try
+            config := container.get('config') as IAppConfiguration;
+            viewParams := container.get('viewParams') as IViewParameters;
+            viewParams
+                .setVar('baseUrl', config.getString('baseUrl'))
+                .setVar('appName', config.getString('appName'));
             result := TUserController.create(
                 routeMiddlewares.getBefore(),
-                routeMiddlewares.getAfter()
+                routeMiddlewares.getAfter(),
+                container.get('userListingView') as IView,
+                viewParams,
+                container.get('user.list') as IModelReader
             );
         finally
             routeMiddlewares := nil;

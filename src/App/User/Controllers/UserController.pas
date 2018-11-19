@@ -23,8 +23,18 @@ type
      *
      * @author [[AUTHOR_NAME]] <[[AUTHOR_EMAIL]]>
      *------------------------------------------------*)
-    TUserController = class(TRouteHandler, IDependency)
+    TUserController = class(TController, IDependency)
+    private
+        userList : IModelReader;
     public
+        constructor create(
+            const beforeMiddlewares : IMiddlewareCollection;
+            const afterMiddlewares : IMiddlewareCollection;
+            const viewInst : IView;
+            const viewParamsInst : IViewParameters;
+            const userListModel : IModelReader
+        );
+        destructor destroy(); override;
         function handleRequest(
             const request : IRequest;
             const response : IResponse
@@ -32,6 +42,24 @@ type
     end;
 
 implementation
+
+    constructor TUserController.create(
+        const beforeMiddlewares : IMiddlewareCollection;
+        const afterMiddlewares : IMiddlewareCollection;
+        const viewInst : IView;
+        const viewParamsInst : IViewParameters;
+        const userListModel : IModelReader
+    );
+    begin
+        inherited create(beforeMiddlewares, afterMiddlewares, viewInst, viewParamsInst);
+        userList := userListModel;
+    end;
+
+    destructor TUserController.destroy();
+    begin
+        inherited destroy();
+        userList := nil;
+    end;
 
     function TUserController.handleRequest(
           const request : IRequest;

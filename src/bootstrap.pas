@@ -31,7 +31,11 @@ uses
      *   controllers factory
      *----------------------------------- *)
     {---- put your controller factory here ---},
-    UserControllerFactory;
+    UserControllerFactory,
+    UserModelFactory,
+    UserListingViewFactory,
+    HeaderViewFactory,
+    FooterViewFactory;
 
 
     procedure TBootstrapApp.buildDependencies(const container : IDependencyContainer);

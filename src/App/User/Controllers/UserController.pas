@@ -67,8 +67,8 @@ implementation
     ) : IResponse;
     begin
         {---put your code here---}
-        //response.body().write('nice');
-        result := response;
+        userList.read();
+        result := inherited handleRequest(request, response);
     end;
 
 end.

@@ -1,1 +1,14 @@
-{ "appName" : "MyApp" }
+{
+    "appName" : "MyApp",
+    "baseUrl" : "http://fano.com",
+
+    "db" : {
+        "mysql" : {
+            "host" : "localhost",
+            "port" : 3306,
+            "username" : "[YOUR USER NAME]",
+            "password" : "[YOUR PASSWORD]",
+            "database" : "[name of database to open]",
+        }
+    }
+}

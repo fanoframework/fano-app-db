@@ -31,6 +31,7 @@ uses
      *   controllers factory
      *----------------------------------- *)
     {---- put your controller factory here ---},
+    DbFactory,
     UserControllerFactory,
     UserModelFactory,
     UserListingViewFactory,

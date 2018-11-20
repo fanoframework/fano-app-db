@@ -41,6 +41,8 @@
 #----------------------------------------------
 -Fu$USER_APP_DIR$/Dependencies
 -Fu$USER_APP_DIR$/Routes
+-Fu$USER_APP_DIR$/App/Common/Db
+-Fu$USER_APP_DIR$/App/Common/Db/Factories
 -Fu$USER_APP_DIR$/App/Common/Views
 -Fu$USER_APP_DIR$/App/Common/Views/Factories
 -Fu$USER_APP_DIR$/App/User/Controllers

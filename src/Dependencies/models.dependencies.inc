@@ -9,6 +9,6 @@
 {%dependencies.inc}
 
 {---put your dependencies registration here---}
-container.add('db', TMySQLDbFactory.create());
+container.add('db', TDbFactory.create());
 
 container.add('user.list', TUserModelFactory.create());

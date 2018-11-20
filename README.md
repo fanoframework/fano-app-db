@@ -8,15 +8,15 @@ Web application skeleton using Fano, Pascal web application framework
 - Web Server (Apache, nginx)
 - [Fano Web Framework](https://github.com/fanoframework/fano)
 
-## Installation
-
-### Build
+### Checking for requirement
 
 Make sure [Free Pascal](https://www.freepascal.org/) is installed. Run
 
     $ fpc -i
 
 If you see something like `Free Pascal Compiler version 3.0.4`,  you are good to go.
+
+## Download sample source code
 
 Clone this repository
 

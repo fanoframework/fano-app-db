@@ -34,6 +34,8 @@ To update Fano to its latest commit, run
 
 Above command will checkout to `master` branch of this repository and pull latest update from `master` branch of [Fano](https://github.com/fanoframework/fano) repository.
 
+## Setup configuration file
+
 Copy `*.cfg.sample` to `*.cfg`.
 Make adjustment as you need in `build.cfg`, `build.prod.cfg`, `build.dev.cfg`
 and run `build.sh` shell script (if you are on Windows, then `build.cmd`).
@@ -48,12 +50,36 @@ configuration as needed. For example, you may need to change `baseUrl` to match 
     $ cp build.prod.cfg.sample build.prod.cfg
     $ cp build.dev.cfg.sample build.dev.cfg
     $ cp build.cfg.sample build.cfg
-    $ ./build.sh
 
 `tools/config.setup.sh` shell script is provided to simplify copying those
 configuration files. Following shell command is similar to command above.
 
     $ ./tools/config.setup.sh
+
+## Setup MySQL database
+
+Before you run application, you need to setup database and table schema.
+Run `tools/data.seeder.sh` from command line
+
+```
+$ DB_ADMIN=[root user] DB_USER=[user to be created] DB_PASSW=[password] ./tools/data.seeder.sh
+```
+
+Following command will prompt you to provide password for `root` and will setup
+new user with name `fano-app-db` and password `123456`, create database with
+same name as user, i.e., `fano-app-db`, and seed all data.
+
+```
+$ DB_ADMIN=root DB_USER=fano-app-db DB_PASSW=123456 ./tools/data.seeder.sh
+```
+
+After that, you need put new database user credential to `src/config/config.json`.
+
+
+## Build application
+
+Run `build.sh` shell script
+
     $ ./build.sh
 
 By default, it will output binary executable in `public` directory.
@@ -89,6 +115,7 @@ Compilation will use executable filename as defined in `EXEC_OUTPUT_NAME`
 environment variable. By default is `app.cgi` filename.
 
     $ EXEC_OUTPUT_NAME=index.cgi ./build.sh
+
 
 ## Run
 

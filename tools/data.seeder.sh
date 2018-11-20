@@ -8,7 +8,7 @@
 #!/bin/bash
 
 #------------------------------------------------------
-# Scripts to setup configuration files
+# Scripts to setup MySQL database
 #------------------------------------------------------
 
 # Create new database user

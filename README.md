@@ -6,6 +6,7 @@ Web application skeleton using Fano, Pascal web application framework
 
 - [Free Pascal](https://www.freepascal.org/) >= 3.0
 - Web Server (Apache, nginx)
+- MySQL
 - [Fano Web Framework](https://github.com/fanoframework/fano)
 
 ### Checking for requirement

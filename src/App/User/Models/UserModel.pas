@@ -20,7 +20,7 @@ uses
 type
 
     (*!-----------------------------------------------
-     * model that load data from static json file
+     * model that load data from MySQL database
      *
      * @author Zamrony P. Juhara <zamronypj@yahoo.com>
      *------------------------------------------------*)

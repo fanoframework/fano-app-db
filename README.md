@@ -38,8 +38,7 @@ Above command will checkout to `master` branch of this repository and pull lates
 ## Setup configuration file
 
 Copy `*.cfg.sample` to `*.cfg`.
-Make adjustment as you need in `build.cfg`, `build.prod.cfg`, `build.dev.cfg`
-and run `build.sh` shell script (if you are on Windows, then `build.cmd`).
+Make adjustment as you need in `build.cfg`, `build.prod.cfg`, `build.dev.cfg`.
 
 These `*.cfg` files contain some Free Pascal compiler switches that you can turn on/off to change how executable is compiled and generated. For complete
 explanation on available compiler switches, consult Free Pascal documentation.
@@ -79,7 +78,7 @@ After that, you need put new database user credential to `src/config/config.json
 
 ## Build application
 
-Run `build.sh` shell script
+Run `build.sh` shell script (if you are on Windows, `build.cmd`)
 
     $ ./build.sh
 

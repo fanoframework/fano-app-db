@@ -1,9 +1,9 @@
 (*!------------------------------------------------------------
  * Fano Framework Skeleton Application (https://fanoframework.github.io)
  *
- * @link      https://github.com/fanoframework/fano-app-views
+ * @link      https://github.com/fanoframework/fano-app-db
  * @copyright Copyright (c) 2018 Zamrony P. Juhara
- * @license   https://github.com/fanoframework/fano-app-views/blob/master/LICENSE (GPL 3.0)
+ * @license   https://github.com/fanoframework/fano-app-db/blob/master/LICENSE (GPL 3.0)
  *------------------------------------------------------------- *)
 unit UserModel;
 

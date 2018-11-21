@@ -1,6 +1,7 @@
-# Fano Web Framework Skeleton Application
+# Fano Web Framework MySql Skeleton Application
 
-Web application skeleton using Fano, Pascal web application framework
+Web application skeleton using Fano, Pascal web application framework.
+This sample application loads data from MySQL database.
 
 ## Requirement
 

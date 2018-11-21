@@ -22,7 +22,7 @@ If you see something like `Free Pascal Compiler version 3.0.4`,  you are good to
 
 Clone this repository
 
-    $ git clone git@github.com:fanofamework/fano-app.git --recursive
+    $ git clone git@github.com:fanofamework/fano-app-db.git --recursive
 
 `--recursive` is needed so git also pull [Fano](https://github.com/fanoframework/fano) repository.
 
@@ -106,7 +106,7 @@ If `BUILD_TYPE` environment variable is not set, production environment will be 
 ## Change executable output directory
 
 Compilation will output executable to directory defined in `EXEC_OUTPUT_DIR`
-environment variable. By default is `app/public` directory.
+environment variable. By default is `public` directory.
 
     $ EXEC_OUTPUT_DIR=/path/to/public/dir ./build.sh
 
@@ -129,9 +129,9 @@ For example on Apache,
 ```
 <VirtualHost *:80>
      ServerName www.example.com
-     DocumentRoot /home/example/app/public
+     DocumentRoot /home/example/fano-app-db/public
 
-     <Directory "/home/example/app/public">
+     <Directory "/home/example/fano-app-db/public">
          Options +ExecCGI
          AllowOverride FileInfo
          Require all granted
@@ -206,7 +206,7 @@ and `storages` directories to your deployment machine. make sure that
 When running `build.sh` script, you may encounter following warning:
 
 ```
-/usr/bin/ld: warning: app/public/link.res contains output sections; did you forget -T?
+/usr/bin/ld: warning: public/link.res contains output sections; did you forget -T?
 ```
 
 This is known issue between FreePascal and GNU Linker. See

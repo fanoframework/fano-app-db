@@ -14,8 +14,7 @@ interface
 
 uses
 
-    fano,
-    fpjson;
+    fano;
 
 type
 

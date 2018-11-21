@@ -38,6 +38,9 @@ uses
     function TUserListingViewFactory.build(const container : IDependencyContainer) : IDependency;
     var headerAndContentView : IView;
     begin
+        //TCompositeView can only compose from two views
+        //We need to display three views: header part, main content, and footer
+        //so we need to daisy-chained two composite view
         headerAndContentView := TCompositeView.create(
             container.get('headerView') as IView,
             TUserListingView.create(container.get('user.list') as IModelReader)

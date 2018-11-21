@@ -20,7 +20,7 @@ type
      *
      * @author Zamrony P. Juhara <zamronypj@yahoo.com>
      *------------------------------------------------*)
-    TUserListingView = class(TInterfacedObject, IView)
+    TUserListingView = class(TInjectableObject, IView)
     private
         userModel : IModelReader;
     public

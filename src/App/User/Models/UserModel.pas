@@ -23,7 +23,7 @@ type
      *
      * @author Zamrony P. Juhara <zamronypj@yahoo.com>
      *------------------------------------------------*)
-    TUserModel = class(TInterfacedObject, IModelReader, IModelReadOnlyData, IDependency)
+    TUserModel = class(TInjectableObject, IModelReader, IModelReadOnlyData)
     private
         mysqlDb : IRdbms;
         resultSet : IRdbmsResultSet;

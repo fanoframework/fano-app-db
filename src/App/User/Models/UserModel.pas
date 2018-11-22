@@ -87,7 +87,7 @@ uses
         const params : IModelWriteOnlyData = nil
     ) : IModelReadOnlyData;
     begin
-        resultSet := mysqlDb.exec('SELECT * FROM users');
+        resultSet := mysqlDb.prepare('SELECT * FROM users').execute();
         result := self;
     end;
 

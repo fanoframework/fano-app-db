@@ -1,9 +1,9 @@
 (*!------------------------------------------------------------
- * [[APP_NAME]] ([[APP_URL]])
+ * Fano Framework Skeleton Application (https://fanoframework.github.io)
  *
- * @link      [[APP_REPOSITORY_URL]]
- * @copyright Copyright (c) [[COPYRIGHT_YEAR]] [[COPYRIGHT_HOLDER]]
- * @license   [[LICENSE_URL]] ([[LICENSE]])
+ * @link      https://github.com/fanoframework/fano-app-db
+ * @copyright Copyright (c) 2018 Zamrony P. Juhara
+ * @license   https://github.com/fanoframework/fano-app-db/blob/master/LICENSE (GPL 3.0)
  *------------------------------------------------------------- *)
 unit UserController;
 
@@ -21,7 +21,7 @@ type
      *
      * See Routes/User/routes.inc
      *
-     * @author [[AUTHOR_NAME]] <[[AUTHOR_EMAIL]]>
+     * @author Zamrony P. Juhara <zamronypj@yahoo.com>
      *------------------------------------------------*)
     TUserController = class(TController, IDependency)
     private

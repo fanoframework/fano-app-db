@@ -16,7 +16,9 @@
 container.add('fileReader', TStringFileReaderFactory.create());
 
 {-----------------------------------------------
-  view parameters
+  register view parameters. use of factory() method
+  will cause container.get('viewParams') call
+  always return new instance
 ------------------------------------------------}
 container.factory('viewParams', TViewParametersFactory.create());
 

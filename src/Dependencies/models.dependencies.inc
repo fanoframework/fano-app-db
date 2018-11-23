@@ -11,4 +11,4 @@
 {---put your dependencies registration here---}
 container.add('db', TDbFactory.create());
 
-container.add('user.list', TUserModelFactory.create());
+container.add('userListModel', TUserModelFactory.create());

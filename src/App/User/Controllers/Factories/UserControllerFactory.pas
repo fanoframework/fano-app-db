@@ -58,10 +58,13 @@ uses
             result := TUserController.create(
                 routeMiddlewares.getBefore(),
                 routeMiddlewares.getAfter(),
+
                 //use userListingView as view
+                //see views.dependencies.inc
                 container.get('userListingView') as IView,
                 viewParams,
-                //use model registered in user.list
+                //use model registered in userListModel
+                //see models.dependencies.inc
                 container.get('userListModel') as IModelReader
             );
         finally

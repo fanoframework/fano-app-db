@@ -43,7 +43,7 @@ uses
         //so we need to daisy-chained two composite view
         headerAndContentView := TCompositeView.create(
             container.get('headerView') as IView,
-            TUserListingView.create(container.get('user.list') as IModelReader)
+            TUserListingView.create(container.get('userListModel') as IModelReader)
         );
         result := TCompositeView.create(
             headerAndContentView,

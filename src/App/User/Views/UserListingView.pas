@@ -64,7 +64,7 @@ implementation
         const viewParams : IViewParameters;
         const response : IResponse
     ) : IResponse;
-    var userData : IModelReadOnlyData;
+    var userData : IModelResultSet;
         respBody : IResponseStream;
     begin
         userData := userModel.data();

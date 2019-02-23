@@ -23,7 +23,7 @@ type
      *
      * @author Zamrony P. Juhara <zamronypj@yahoo.com>
      *------------------------------------------------*)
-    TUserModel = class(TInjectableObject, IModelReader, IModelReadOnlyData)
+    TUserModel = class(TInjectableObject, IModelReader, IModelResultSet)
     private
         mysqlDb : IRdbms;
         resultSet : IRdbmsResultSet;
@@ -31,8 +31,8 @@ type
         constructor create(const db : IRdbms);
         destructor destroy(); override;
 
-        function read(const params : IModelWriteOnlyData = nil) : IModelReadOnlyData;
-        function data() : IModelReadOnlyData;
+        function read(const params : IModelParams = nil) : IModelResultSet;
+        function data() : IModelResultSet;
 
         (*!------------------------------------------------
          * get total data
@@ -84,14 +84,14 @@ uses
     end;
 
     function TUserModel.read(
-        const params : IModelWriteOnlyData = nil
-    ) : IModelReadOnlyData;
+        const params : IModelParams = nil
+    ) : IModelResultSet;
     begin
         resultSet := mysqlDb.prepare('SELECT * FROM users').execute();
         result := self;
     end;
 
-    function TUserModel.data() : IModelReadOnlyData;
+    function TUserModel.data() : IModelResultSet;
     begin
         result := self;
     end;

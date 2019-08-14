@@ -56,8 +56,7 @@ uses
 
             //create the controller
             result := TUserController.create(
-                routeMiddlewares.getBefore(),
-                routeMiddlewares.getAfter(),
+                routeMiddlewares,
 
                 //use userListingView as view
                 //see views.dependencies.inc

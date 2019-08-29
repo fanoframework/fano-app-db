@@ -16,23 +16,6 @@
  ------------------------------------------------}
  container.factory('routeMiddlewares', TNullMiddlewareCollectionAwareFactory.create());
 
- {-----------------------------------------------
-   register application simple router instance
-   Replace with your own implementation if required
- ------------------------------------------------}
- container.add('router', TSimpleRouterFactory.create());
-
- {-----------------------------------------------
-   setup application request dispatcher
-   replace with TDispatcherDispatcherFactory if middleware support is requred
- ------------------------------------------------}
- container.add(
-     'dispatcher',
-     TSimpleDispatcherFactory.create(
-         container.get('router') as IRouteMatcher
-     )
- );
-
 {-----------------------------------------------
   register application configuration
 ------------------------------------------------}

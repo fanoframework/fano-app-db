@@ -6,5 +6,5 @@
  * @license   [[LICENSE_URL]] ([[LICENSE]])
  *------------------------------------------------------------- *)
 
-router.get('/user', container.get('userController') as IRouteHandler);
-router.get('/', container.get('userController') as IRouteHandler);
+router.get('/user', container.get('userController') as IRequestHandler);
+router.get('/', container.get('userController') as IRequestHandler);

@@ -23,12 +23,11 @@ type
      *
      * @author Zamrony P. Juhara <zamronypj@yahoo.com>
      *------------------------------------------------*)
-    TUserController = class(TController, IDependency)
+    TUserController = class(TController)
     private
         userList : IModelReader;
     public
         constructor create(
-            const aMiddlewares : IMiddlewareCollectionAware;
             const viewInst : IView;
             const viewParamsInst : IViewParameters;
             const userListModel : IModelReader
@@ -36,20 +35,20 @@ type
         destructor destroy(); override;
         function handleRequest(
             const request : IRequest;
-            const response : IResponse
+            const response : IResponse;
+            const args : IRouteArgsReader
         ) : IResponse; override;
     end;
 
 implementation
 
     constructor TUserController.create(
-        const aMiddlewares : IMiddlewareCollectionAware;
         const viewInst : IView;
         const viewParamsInst : IViewParameters;
         const userListModel : IModelReader
     );
     begin
-        inherited create(aMiddlewares, viewInst, viewParamsInst);
+        inherited create(viewInst, viewParamsInst);
         userList := userListModel;
     end;
 
@@ -60,13 +59,14 @@ implementation
     end;
 
     function TUserController.handleRequest(
-          const request : IRequest;
-          const response : IResponse
+        const request : IRequest;
+        const response : IResponse;
+        const args : IRouteArgsReader
     ) : IResponse;
     begin
         {---put your code here---}
         userList.read();
-        result := inherited handleRequest(request, response);
+        result := inherited handleRequest(request, response, args);
     end;
 
 end.

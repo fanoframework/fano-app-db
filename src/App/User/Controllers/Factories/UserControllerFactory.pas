@@ -35,39 +35,31 @@ uses
     UserController;
 
     function TUserControllerFactory.build(const container : IDependencyContainer) : IDependency;
-    var routeMiddlewares : IMiddlewareCollectionAware;
-        config : IAppConfiguration;
+    var config : IAppConfiguration;
         viewParams : IViewParameters;
     begin
-        routeMiddlewares := container.get('routeMiddlewares') as IMiddlewareCollectionAware;
-        try
-            //get instance of application from dependency container
-            config := container.get('config') as IAppConfiguration;
+        //get instance of application from dependency container
+        config := container.get('config') as IAppConfiguration;
 
-            //get new instance of viewParams from dependency container
-            viewParams := container.get('viewParams') as IViewParameters;
+        //get new instance of viewParams from dependency container
+        viewParams := container.get('viewParams') as IViewParameters;
 
-            //set some value. Following command will replace
-            //any {{baseUrl}} {{appName}} in template HTML with actual
-            //value from json configuration
-            viewParams
-                .setVar('baseUrl', config.getString('baseUrl'))
-                .setVar('appName', config.getString('appName'));
+        //set some value. Following command will replace
+        //any {{baseUrl}} {{appName}} in template HTML with actual
+        //value from json configuration
+        viewParams
+            .setVar('baseUrl', config.getString('baseUrl'))
+            .setVar('appName', config.getString('appName'));
 
-            //create the controller
-            result := TUserController.create(
-                routeMiddlewares,
-
-                //use userListingView as view
-                //see views.dependencies.inc
-                container.get('userListingView') as IView,
-                viewParams,
-                //use model registered in userListModel
-                //see models.dependencies.inc
-                container.get('userListModel') as IModelReader
-            );
-        finally
-            routeMiddlewares := nil;
-        end;
+        //create the controller
+        result := TUserController.create(
+            //use userListingView as view
+            //see views.dependencies.inc
+            container.get('userListingView') as IView,
+            viewParams,
+            //use model registered in userListModel
+            //see models.dependencies.inc
+            container.get('userListModel') as IModelReader
+        );
     end;
 end.
